@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Editar Producto</title>
+  <link rel="stylesheet" th:href="@{/style/style.css}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="header-container">
+    <h1>Editar Producto</h1>
+    <a th:href="@{/empresa/volver}">
+      <button class="btn-custom" type="button">Volver</button>
+    </a>
+  </div>
+  
+  <form th:action="@{/empresa/editado}" method="post">
+	<input type="hidden" name="dniOriginal" th:value="${empleado.dni}">
+    
+    <table class="table table-info table-striped-columns" border="1">
+      <tr>
+        <th>Nombre:</th>
+        <td><input type="text" name="nombre" size="50" th:value="${empleado.nombre}"></td>
+      </tr>
+      <tr>
+        <th>Dni:</th>
+        <td><input type="text" name="dni" size="50" th:value="${empleado.dni}"></td>
+      </tr>
+      <tr>
+        <th>Sexo:</th>
+        <td><input type="text" name="sexo" size="50" th:value="${empleado.sexo}"></td>
+      </tr>
+      <tr>
+        <th>Categoria:</th>
+        <td><input type="number" name="categoria" size="50" th:value="${empleado.categoria}"></td>
+      </tr>
+      <tr>
+        <th>Anyos:</th>
+        <td><input type="number" name="anyos" size="50" th:value="${empleado.anyos}"></td>
+      </tr>
+    </table>
+    <input type="submit" class="btn-custom" value="Guardar">
+  </form>
+</body>
+</html>

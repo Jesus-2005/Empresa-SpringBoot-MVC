@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Menú de Opciones</title>
+  <link rel="stylesheet" th:href="@{/style/style.css}">
+</head>
+<body>
+  <h1>Menú de Opciones</h1>
+  <table class="menu">
+    <tr>
+      <td class="block"><a th:href="@{/empresa/buscarDni}">Ver sueldo</a></td>
+    </tr>
+    <tr>
+      <td class="block"><a th:href="@{/empresa/listar}">Ver Empleados</a></td>
+    </tr>
+    <tr>
+      <td class="block"><a th:href="@{/empresa/buscarEmpleados}">Modificar Empleados</a></td>
+    </tr>
+  </table>
+</body>
+</html>

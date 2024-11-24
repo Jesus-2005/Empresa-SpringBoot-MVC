@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Modificar Empleados</title>
+  <link rel="stylesheet" th:href="@{/style/style.css}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+  <div class="header-container">
+    <h1>Modificar Empleados</h1>
+    <a th:href="@{/empresa/volver}">
+      <button class="btn-custom" type="button">Volver</button>
+    </a>
+  </div>
+
+  <table class="table table-info table-striped-columns" border="1">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Dni</th>
+        <th>Sexo</th>
+        <th>Categoria</th>
+        <th>Años</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="empleado : ${empleados}">
+        <td th:text="${empleado.nombre}"></td>
+        <td th:text="${empleado.dni}"></td>
+        <td th:text="${empleado.sexo}"></td>
+        <td th:text="${empleado.categoria}"></td>
+        <td th:text="${empleado.anyos}"></td>
+        <td>
+          <a th:href="@{editarEmpleado&dni={dni}(dni=${empleado.dni})}">
+            <button class="btn-custom" type="button">Editar</button>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
