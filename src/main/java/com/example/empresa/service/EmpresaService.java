@@ -59,10 +59,10 @@ public class EmpresaService {
 			nuevoEmpleado.setSexo(empleado.getSexo());
 			nuevoEmpleado.setCategoria(empleado.getCategoria());
 			nuevoEmpleado.setAnyos(empleado.getAnyos());
-
+			empleadoRepository.delete(empleadoExistente);
 			empleadoRepository.save(nuevoEmpleado);
 
-			empleadoRepository.delete(empleadoExistente);
+			
 		}
 
 		empleadoExistente.imprime();
@@ -77,9 +77,8 @@ public class EmpresaService {
 				Nomina nominaNueva = new Nomina();
 				nominaNueva.setDni(empleado.getDni());
 				nominaNueva.setSueldo(nominaService.calcularSueldo(empleado));
-				nominaRepository.save(nominaNueva);
-				
 				nominaRepository.delete(nominaExistente);
+				nominaRepository.save(nominaNueva);
 			}
 		}
 
